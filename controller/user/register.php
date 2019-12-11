@@ -1,23 +1,14 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    die;
-}
+require_once 'connect.php';
 
-if ($_POST['username'] == '' || $_POST['password'] =='' ) {
-    header('Location: /login.php?error');
-}
-
-require_once '../PDO/connect.php';
-
-$sql = 'INSERT INTO user VALUES (":username", ":password")';
+$sql = "INSERT INTO user (username, password) VALUES (:username, :password)";
 $stmt = $pdo->prepare($sql);
-$stmt->execute([
-    'username' => $_POST['username'],
-    'password' => md5($_POST['password']),
-]);
+try {
+    $stmt->execute($credentials);
+} catch (PDOException $exception) {
+    header('Location: /register.php?error');
+}
 
-$result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-var_dump($result);
+$_SESSION['user'] = $credentials;
+header('Location: /');

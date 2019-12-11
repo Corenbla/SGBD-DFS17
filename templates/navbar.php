@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light position-absolute">
     <a class="navbar-brand" href="/">Pokéshop</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -14,6 +14,9 @@
             </li>
         </ul>
         <ul class="navbar-nav my-lg-0">
+            <li class="nav-item">
+                <a href="/register.php" class="nav-link">Register</a>
+            </li>
             <li class="nav-item">
                 <a href="/login.php" class="nav-link">Login</a>
             </li>
