@@ -15,7 +15,7 @@
         </ul>
         <ul class="navbar-nav my-lg-0">
             <li class="nav-item">
-                <a href="/login" class="nav-link">Login</a>
+                <a href="/login.php" class="nav-link">Login</a>
             </li>
         </ul>
     </div>
