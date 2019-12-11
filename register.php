@@ -1,11 +1,22 @@
-<?php require_once('templates/header.php') ?>
+<?php
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    http_response_code(401); exit(401);
+}
+if (!$_SESSION['user']['is_admin']) {
+    http_response_code(403); exit(403);
+}
+
+require_once('templates/header.php');
+?>
 
     <div class="container">
         <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Register</h5>
+                        <h5 class="card-title text-center">Create an account</h5>
                         <?php if (isset($_GET['error'])): ?>
                             <h5 class="text-center text-danger">Error in the form!</h5>
                         <?php endif; ?>
@@ -20,7 +31,7 @@
                                 <label for="inputPassword">Password</label>
                             </div>
 
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Create</button>
                         </form>
                     </div>
                 </div>

@@ -11,8 +11,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($user['username'] == $credentials['username']
     && $user['password'] == $credentials['password']
 ) {
-    $credentials['id'] = $user['id'];
-    $_SESSION['user'] = $credentials;
+    $_SESSION['user'] = $user;
     header('Location: /');
 } else {
     header('Location: /login.php?error');

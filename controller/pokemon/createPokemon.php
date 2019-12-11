@@ -1,8 +1,8 @@
 <?php
-
+session_start();
 require_once('../pdo/connect.php');
 
-$sql = "INSERT INTO pokemon (id, name, description, user_id, type_id, type2_id) VALUES (NULL, :name, :description, :user, :type_1, :type_2)";
+$sql = "INSERT INTO pokemon (id, name, description, user_id, type_id, type2_id, created_at) VALUES (NULL, :name, :description, :user, :type_1, :type_2, :time)";
 $stmt = $pdo->prepare($sql);
 try {
     $stmt->execute([
@@ -11,6 +11,7 @@ try {
         'user' => intval($_POST['user']),
         'type_1' => $_POST['type_1'],
         'type_2' => $_POST['type_2'],
+        'time' => time(),
     ]);
 } catch (PDOException $exception) {
     $_SESSION['PDOError'] = $exception;
@@ -18,4 +19,4 @@ try {
 
 }
 
-header('Location: /pokedex.php');
+header('Location: /myPokemons.php');
