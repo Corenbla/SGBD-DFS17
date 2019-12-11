@@ -6,7 +6,7 @@
 <?php endif; ?>
 <div class="container d-flex h-100 align-items-center justify-content-center">
     <?php if (isset($_SESSION['user'])): ?>
-        <?php require('pokedex.php'); ?>
+        <a href="create.php" class="btn btn-primary">Create a new pokémon</a>
     <?php else: ?>
         <h1>
             <a href="/login.php">Login</a>
