@@ -10,7 +10,7 @@ require_once('templates/header.php');
 require_once('controller/pokemon/getUserPokemon.php');
 ?>
 
-<div class="row">
+<div class="row" id="js-list">
     <?php foreach ($pokemons as $pokemon): ?>
         <div class="col-sm-4">
             <div class="card">
@@ -21,7 +21,7 @@ require_once('controller/pokemon/getUserPokemon.php');
                     </div>
                     <div class="d-flex justify-content-between">
                         <p class="card-text js-description"><?= $pokemon['description'] ?></p>
-                        <button class="btn btn-warning btn-sm js-edit-pokemon" data-id="<?= $pokemon['id'] ?>" data-username="<?= $pokemon['username'] ?>">Edit</button>
+                        <button class="btn btn-warning btn-sm js-edit-pokemon" data-id="<?= $pokemon['id'] ?>" data-username="<?= $pokemon['username'] ?>">Modify</button>
                     </div>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -32,6 +32,10 @@ require_once('controller/pokemon/getUserPokemon.php');
             </div>
         </div>
     <?php endforeach; ?>
+</div>
+
+<div class="d-flex justify-content-center container align-items-center h-25">
+    <a class="btn btn-primary" href="create.php">Create a new pokémon</a>
 </div>
 
 <script src="js/deletePokemonAjax.js"></script>

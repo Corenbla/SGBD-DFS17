@@ -41,5 +41,3 @@ if (isset($_POST['id'])) {
     <label for="description">Description:</label>
     <textarea class="form-control" name="description" id="description" rows="3"><?= $pokemon['description'] ?? '' ?></textarea>
 </div>
-
-<input type="hidden" name="user" value="<?= $_SESSION['user']['id'] ?>">
