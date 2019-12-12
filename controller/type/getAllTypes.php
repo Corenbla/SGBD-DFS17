@@ -1,6 +1,6 @@
 <?php
 
-require_once('controller/pdo/connect.php');
+require_once('/var/www/html/controller/pdo/connect.php');
 
 $sql = "SELECT * FROM type";
 $stmt = $pdo->prepare($sql);

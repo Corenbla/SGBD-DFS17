@@ -2,8 +2,9 @@ $(document).ready(() => {
     const $button = $('.js-delete-pokemon');
     $button.on('click', e => {
         const $clickedButton = $(e.target);
+        const pokemonName = $clickedButton.closest('.card').find('.card-title').text();
         vex.dialog.confirm({
-            message: 'Are you sure you want to release "' + $clickedButton.closest('.card').find('.card-title').text() + '" ?',
+            message: 'Are you sure you want to release "' + pokemonName + '" ?',
             callback: value => {
                 if (value) {
                     $.ajax({

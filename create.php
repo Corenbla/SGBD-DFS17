@@ -10,33 +10,8 @@ require_once('controller/type/getAllTypes.php');
 ?>
 
 <form class="jumbotron container" method="POST" action="controller/pokemon/createPokemon.php">
-    <div class="form-group">
-        <label for="type1">Type 1:</label>
-        <select class="form-control" id="type1" name="type_1">
-            <?php foreach ($allTypes as $type):?>
-                <option value="<?= $type['id'] ?>"><?= $type['type'] ?></option>
-            <?php endforeach; ?>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="type2">Type 2:</label>
-        <select class="form-control" id="type2" name="type_2">
-            <?php foreach ($allTypes as $type):?>
-                <option value="<?= $type['id'] ?>"><?= $type['type'] ?></option>
-            <?php endforeach; ?>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="name">Name:</label>
-        <input class="form-control" type="text" id="name" name="name">
-    </div>
-    <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea class="form-control" name="description" id="description" rows="3"></textarea>
-    </div>
-
-    <input type="hidden" name="user" value="<?= $_SESSION['user']['id'] ?>">
-
+    <?php require_once('templates/pokemonForm.php'); ?>
+    
     <div class="form-group d-flex justify-content-center">
         <button type="submit" class="btn btn-primary">Create!</button>
     </div>
