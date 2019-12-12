@@ -14,7 +14,10 @@ require_once('controller/pokemon/getUserPokemon.php');
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $pokemon['name'] ?></h5>
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title"><?= $pokemon['name'] ?></h5>
+                        <button class="btn btn-danger btn-sm js-delete-pokemon" data-id="<?= $pokemon['id'] ?>" data-username="<?= $pokemon['username'] ?>">Release</button>
+                    </div>
                     <p class="card-text"><?= $pokemon['description'] ?></p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -27,5 +30,6 @@ require_once('controller/pokemon/getUserPokemon.php');
     <?php endforeach; ?>
 </div>
 
+<script src="js/deletePokemonAjax.js"></script>
 <?php require_once('templates/footer.php') ?>
 
