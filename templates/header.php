@@ -15,6 +15,11 @@ if (session_status() == PHP_SESSION_NONE) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Vex modal -->
+    <script src="/node_modules/vex-js/dist/js/vex.combined.js"></script>
+    <script>vex.defaultOptions.className = 'vex-theme-os'</script>
+    <link rel="stylesheet" href="/node_modules/vex-js/dist/css/vex.css" />
+    <link rel="stylesheet" href="/node_modules/vex-js/dist/css/vex-theme-os.css" />
 </head>
 <body class="vh-100">
 <?php require_once 'templates/navbar.php'?>
