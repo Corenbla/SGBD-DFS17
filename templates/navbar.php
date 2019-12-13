@@ -13,6 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/allPokemons.php">All pokémons</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/lastPokemons.php">Last 10 pokémons</a>
+                </li>
             </ul>
             <?php if (isset($_SESSION['user'])): ?>
                 <ul class="navbar-nav my-lg-0">

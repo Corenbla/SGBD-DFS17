@@ -18,8 +18,11 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- Vex modal -->
     <script src="/node_modules/vex-js/dist/js/vex.combined.js"></script>
     <script>vex.defaultOptions.className = 'vex-theme-os'</script>
+    <script src="/node_modules/konami/konami.js"></script>
     <link rel="stylesheet" href="/node_modules/vex-js/dist/css/vex.css" />
     <link rel="stylesheet" href="/node_modules/vex-js/dist/css/vex-theme-os.css" />
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="vh-100">
 <?php require_once 'templates/navbar.php'?>

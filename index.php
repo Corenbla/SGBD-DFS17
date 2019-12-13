@@ -1,10 +1,11 @@
 <?php require_once('templates/header.php') ?>
+
 <div class="container d-flex align-items-center justify-content-center" style="height: 90vh">
     <?php if (isset($_SESSION['user'])): ?>
         <a href="create.php" class="btn btn-primary">Create a new pokémon</a>
     <?php else: ?>
         <h1>
-            <a href="/login.php">Login</a>
+            <a href="/login.php" class="btn btn-primary btn-lg">Login</a>
         </h1>
     <?php endif ?>
 </div>

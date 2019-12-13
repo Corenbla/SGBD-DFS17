@@ -1,12 +1,12 @@
 <?php
 require_once('templates/header.php');
-require_once('controller/pokemon/getAllPokemons.php');
+require_once('controller/pokemon/getLastPokemons.php');
 ?>
 <link rel="stylesheet" href="css/pokemons.css">
 
 <div class="container">
     <div class="row">
-        <?php foreach ($allPokemons as $pokemon): ?>
+        <?php foreach ($lastPokemons as $pokemon): ?>
             <div class="col-sm-4 mb-5">
                 <div class="card" style="border: 2px solid #<?= $pokemon['color'] ?>80">
                     <div class="card-body">
@@ -26,3 +26,4 @@ require_once('controller/pokemon/getAllPokemons.php');
 </div>
 <?php require_once('templates/footer.php') ?>
 
+                               

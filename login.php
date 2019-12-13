@@ -1,4 +1,5 @@
 <?php require_once('templates/header.php') ?>
+    <link rel="stylesheet" href="css/main.css">
 
     <div class="container">
         <div class="row">

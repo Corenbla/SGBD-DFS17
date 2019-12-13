@@ -32,28 +32,19 @@ $(document).ready(() => {
                     }
                 }).done(() => {
                     $.ajax({
-                        url: '/controller/type/getOneType.php',
+                        url: '/controller/pokemon/getOnePokemon.php',
                         method: 'POST',
                         data: {
-                            id: data.type_1
-                        }
+                            id: data.id,
+                            ajax: true
+                        },
                     }).done(json => {
-                        $card.find('.js-type1').text(json.type);
+                        $card[0].style['cssText'] = `border-color: #${json.color}80`;
+                        $card.find('.js-type1').text(json.type[0]);
+                        $card.find('.js-type2').text(json.type[1]);
+                        $card.find('.js-name').text(json.name);
+                        $card.find('.js-description').text(json.description);
                     });
-
-                    $.ajax({
-                        url: '/controller/type/getOneType.php',
-                        method: 'POST',
-                        data: {
-                            id: data.type_2
-                        }
-                    }).done(json => {
-                        $card.find('.js-type2').text(json.type);
-                    });
-
-                    $card.find('.js-name').text(data.name);
-                    $card.find('.js-description').text(data.description);
-
                 })
             }
         })
