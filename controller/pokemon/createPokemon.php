@@ -14,6 +14,9 @@ if (!isset(
 
 $_POST['user'] = $_SESSION['user']['id'];
 $_POST['time'] = time();
+
+sanitizeArray($_POST);
+
 if ($_POST['type_2'] === '') {
     $_POST['type_2'] = 20; // Type "-----" in database
 }

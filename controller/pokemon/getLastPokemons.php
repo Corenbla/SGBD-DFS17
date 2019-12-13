@@ -10,6 +10,7 @@ INNER JOIN type t2 ON t2.id = p.type2_id
 WHERE p.created_at > :lastWeekTimestamp
 ORDER BY p.created_at DESC
 TAG;
+
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
     'lastWeekTimestamp' => strtotime('-1 week')

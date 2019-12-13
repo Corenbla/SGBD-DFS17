@@ -1,9 +1,11 @@
 $(document).ready(() => {
     const $button = $('.js-edit-pokemon');
+
     $button.on('click', e => {
         const $clickedButton = $(e.target);
         const $card = $clickedButton.closest('.card');
         const pokemonName = $clickedButton.closest('.card').find('.card-title').text();
+
         const form = $.ajax({
             url: '/templates/pokemonForm.php',
             method: 'POST',
@@ -39,7 +41,7 @@ $(document).ready(() => {
                             ajax: true
                         },
                     }).done(json => {
-                        $card[0].style['cssText'] = `border-color: #${json.color}80`;
+                        $card[0].style['cssText'] = `border: 2px solid #${json.color}80`;
                         $card.find('.js-type1').text(json.type[0]);
                         $card.find('.js-type2').text(json.type[1]);
                         $card.find('.js-name').text(json.name);

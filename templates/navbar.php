@@ -20,6 +20,9 @@
             <?php if (isset($_SESSION['user'])): ?>
                 <ul class="navbar-nav my-lg-0">
                     <li class="nav-item">
+                        <a class="nav-link" href="../create.php">Create a new pokémon</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="/myPokemons.php" class="nav-link">My pokémons</a>
                     </li>
                     <li class="nav-item">

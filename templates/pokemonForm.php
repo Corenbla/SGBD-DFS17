@@ -8,11 +8,10 @@ if (!isset($_SESSION['user'])) {
     exit(401);
 }
 
-require_once('/var/www/html/controller/type/getAllTypes.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/controller/type/getAllTypes.php');
 if (isset($_POST['id'])) {
-    require_once('/var/www/html/controller/pokemon/getOnePokemon.php');
-}
-?>
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/controller/pokemon/getOnePokemon.php');
+} ?>
     <div class="form-group">
         <label for="type1">Type 1:</label>
         <select class="form-control" id="type1" name="type_1">
@@ -28,7 +27,8 @@ if (isset($_POST['id'])) {
         <select class="form-control" id="type2" name="type_2">
             <option value="" <?php if (isset($pokemon) && $pokemon['type2_id'] === $type['id']) {
                 echo 'selected'; // No 2nd type
-            } ?>>-----</option>
+            } ?>>-----
+            </option>
             <?php foreach ($allTypes as $type): ?>
                 <option value="<?= $type['id'] ?>" <?php if (isset($pokemon) && $pokemon['type2_id'] === $type['id']) {
                     echo 'selected';

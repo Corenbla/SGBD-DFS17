@@ -1,4 +1,4 @@
-<?php require_once('templates/header.php') ?>
+<?php require_once('templates/header.php'); ?>
 
 <div class="container d-flex align-items-center justify-content-center" style="height: 90vh">
     <?php if (isset($_SESSION['user'])): ?>

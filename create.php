@@ -12,7 +12,7 @@ require_once('controller/type/getAllTypes.php');
 <form class="jumbotron container" method="POST" action="controller/pokemon/createPokemon.php">
     <?php require_once('templates/pokemonForm.php'); ?>
     
-    <div class="form-group d-flex justify-content-center">
+    <div class="form-group d-flex justify-content-center" >
         <button type="submit" class="btn btn-primary">Create!</button>
     </div>
 </form>

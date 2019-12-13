@@ -8,6 +8,7 @@ INNER JOIN user u ON u.id = p.user_id
 INNER JOIN type t ON t.id = p.type_id
 INNER JOIN type t2 ON t2.id = p.type2_id
 TAG;
+
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 

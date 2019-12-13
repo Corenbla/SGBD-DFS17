@@ -18,11 +18,11 @@ require_once('controller/pokemon/getUserPokemon.php');
                 <div class="card" style="border: 2px solid #<?= $pokemon['color'] ?>80">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h5 class="card-title js-name"><?= $pokemon['name'] ?></h5>
+                            <h5 class="card-title js-name overflow-hidden"><?= $pokemon['name'] ?></h5>
                             <button class="btn btn-danger btn-sm js-delete-pokemon" data-id="<?= $pokemon['id'] ?>" data-username="<?= $pokemon['username'] ?>">Release</button>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <p class="card-text js-description"><?= $pokemon['description'] ?></p>
+                            <p class="card-text js-description overflow-hidden"><?= $pokemon['description'] ?></p>
                             <button class="btn btn-warning btn-sm js-edit-pokemon" data-id="<?= $pokemon['id'] ?>" data-username="<?= $pokemon['username'] ?>">Modify</button>
                         </div>
                     </div>
@@ -38,8 +38,7 @@ require_once('controller/pokemon/getUserPokemon.php');
     </div>
 </div>
 
-<div class="d-flex justify-content-center container align-items-center flex-column h-25">
-    <a class="btn btn-primary mb-1" href="create.php">Create a new pokémon</a>
+<div class="d-flex justify-content-center container align-items-center flex-column h-25" style="z-index: 1050;">
     <?php if (isset($_SESSION['PDOError'])): ?>
         <div class="alert alert-danger" role="alert">
             <?= $_SESSION['PDOError'] ?>

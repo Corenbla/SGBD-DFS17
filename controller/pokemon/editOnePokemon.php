@@ -14,6 +14,8 @@ if (!isset(
     exit(400);
 }
 
+sanitizeArray($_POST);
+
 $sql = <<<TAG
 UPDATE pokemon p
 SET 
@@ -23,6 +25,7 @@ SET
     p.type2_id = :type2_id
 WHERE p.id = :id
 TAG;
+
 $stmt = $pdo->prepare($sql);
 try {
     $stmt->execute(
