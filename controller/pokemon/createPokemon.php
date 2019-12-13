@@ -14,18 +14,17 @@ if (!isset(
 
 $_POST['user'] = $_SESSION['user']['id'];
 $_POST['time'] = time();
+if ($_POST['type_2'] === '') {
+    $_POST['type_2'] = 20; // Type "-----" in database
+}
 
 $sql = <<<TAG
 INSERT INTO pokemon (id, name, description, user_id, type_id, type2_id, created_at)
 VALUES (NULL, :name, :description, :user, :type_1, :type_2, :time)
 TAG;
 $stmt = $pdo->prepare($sql);
-try {
-    $stmt->execute($_POST);
-} catch (PDOException $exception) {
-    $_SESSION['PDOError'] = $exception;
-    header('Location: /myPokemons.php');
-}
+
+$stmt->execute($_POST);
 
 unset($_SESSION['PDOError']);
 header('Location: /myPokemons.php');

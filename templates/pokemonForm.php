@@ -26,6 +26,9 @@ if (isset($_POST['id'])) {
     <div class="form-group">
         <label for="type2">Type 2:</label>
         <select class="form-control" id="type2" name="type_2">
+            <option value="" <?php if (isset($pokemon) && $pokemon['type2_id'] === $type['id']) {
+                echo 'selected'; // No 2nd type
+            } ?>>-----</option>
             <?php foreach ($allTypes as $type): ?>
                 <option value="<?= $type['id'] ?>" <?php if (isset($pokemon) && $pokemon['type2_id'] === $type['id']) {
                     echo 'selected';
